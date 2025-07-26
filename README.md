@@ -1,70 +1,227 @@
-# Getting Started with Create React App
+# Survey Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive **Survey Analytics and Management Platform** that integrates with SurveyMonkey's API to provide advanced data visualization and analytics capabilities.
 
-## Available Scripts
+## 🚀 Project Overview
 
-In the project directory, you can run:
+This full-stack application transforms raw survey data into actionable insights through interactive charts, advanced filtering, and comprehensive export capabilities.
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- **React.js** - Modern UI with functional components and hooks
+- **Material-UI (MUI)** - Responsive, professional UI components
+- **Recharts** - Interactive data visualizations
+- **Day.js** - Efficient date manipulation
+- **React Router** - Client-side navigation
+- **html2canvas** - Chart export functionality
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- **Node.js & Express** - RESTful API server
+- **SurveyMonkey API** - Real-time data integration
+- **CORS** - Cross-origin resource sharing
+- **dotenv** - Environment configuration
 
-### `npm test`
+## ✨ Key Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📊 Advanced Data Visualization
+- **Multiple Chart Types**: Bar, Pie, Line, and Trend Analysis charts
+- **Interactive Tooltips**: Detailed hover information with percentages
+- **Responsive Design**: Charts adapt to different screen sizes
+- **Custom Styling**: Professional gradients and color schemes
 
-### `npm run build`
+### 🔍 Smart Data Processing
+- **Intelligent Response Mapping**: Converts SurveyMonkey IDs to readable text
+- **Question Auto-numbering**: Handles surveys with missing titles
+- **Data Cleaning**: Filters out invalid/empty responses
+- **Real-time Processing**: Dynamic data transformation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ⚡ Performance Optimizations
+- **Local Storage Caching**: 30-minute cache for processed data
+- **Memoized Calculations**: Efficient re-rendering with React hooks
+- **Debounced Filtering**: Smooth filter updates
+- **Progressive Loading**: Skeleton loaders during data fetching
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🎛️ Advanced Filtering System
+- **Time Range Filters**: Last 24 hours, 7 days, 30 days, 1 year
+- **Response Threshold**: Show questions with minimum response counts
+- **Real-time Updates**: Instant chart updates on filter changes
+- **Smart Suggestions**: Helpful filter recommendations
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📤 Export Capabilities
+- **CSV Export**: Structured data for further analysis
+- **High-Quality Image Export**: PNG export of charts and tables
+- **Multiple View Modes**: Export tables or visualizations
+- **Professional Formatting**: Ready for presentations and reports
 
-### `npm run eject`
+## 🏗️ Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+smm/
+├── frontend/                 # React frontend application
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Auth/        # OAuth and authentication
+│   │   │   ├── Dashboard/   # Main dashboard interface
+│   │   │   ├── Login/       # Login and authentication UI
+│   │   │   ├── SurveyDetails/ # Advanced analytics components
+│   │   │   └── NotFound/    # 404 error handling
+│   │   ├── hooks/           # Custom React hooks
+│   │   ├── services/        # API integration services
+│   │   └── theme.js         # MUI theme configuration
+│   ├── public/              # Static assets
+│   └── build/               # Production build files
+└── backend/                 # Node.js backend server
+    ├── index.js             # Main server file
+    ├── exchangeToken.js     # OAuth token handling
+    └── package.json         # Backend dependencies
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- SurveyMonkey API credentials
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/var-13/survey-management-system.git
+   cd survey-management-system
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Setup Backend**
+   ```bash
+   cd backend
+   npm install
+   
+   # Create .env file with your SurveyMonkey credentials
+   echo "SURVEYMONKEY_CLIENT_ID=your_client_id" > .env
+   echo "SURVEYMONKEY_CLIENT_SECRET=your_client_secret" >> .env
+   echo "SURVEYMONKEY_REDIRECT_URI=your_redirect_uri" >> .env
+   
+   # Start the backend server
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **Setup Frontend**
+   ```bash
+   cd ../frontend
+   npm install
+   
+   # Start the frontend development server
+   npm start
+   ```
 
-### Code Splitting
+4. **Access the Application**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:5000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📱 Usage
 
-### Analyzing the Bundle Size
+### Dashboard Features
+1. **Connect SurveyMonkey Account**: OAuth integration for secure access
+2. **View Survey List**: Browse all available surveys
+3. **Detailed Analytics**: Click on any survey for advanced insights
+4. **Filter Data**: Use time range and response threshold filters
+5. **Visualize Data**: Switch between Table, Bar, Pie, Line, and Trend views
+6. **Export Results**: Download CSV data or high-quality chart images
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Analytics Capabilities
+- **Response Patterns**: Identify trends in survey responses
+- **Completion Rates**: Track survey completion statistics
+- **Time-based Analysis**: View response patterns over time
+- **Question Performance**: Analyze individual question effectiveness
 
-### Making a Progressive Web App
+## 🔧 API Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### SurveyMonkey Endpoints Used
+- `/surveys` - Fetch survey list
+- `/surveys/{id}` - Get survey details
+- `/surveys/{id}/responses/bulk` - Fetch response data
+- `/surveys/{id}/details` - Advanced survey structure
 
-### Advanced Configuration
+### Error Handling
+- **Graceful Degradation**: Fallback endpoints for API failures
+- **User-Friendly Messages**: Clear error communication
+- **Retry Mechanisms**: Automatic retry for failed requests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🎨 UI/UX Features
 
-### Deployment
+### Professional Design
+- **Material Design**: Consistent, modern interface
+- **Dark/Light Mode**: Theme switching capability
+- **Responsive Layout**: Mobile and desktop optimized
+- **Loading States**: Skeleton loaders and progress indicators
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### User Experience
+- **Intuitive Navigation**: Clear routing and breadcrumbs
+- **Real-time Feedback**: Snackbar notifications for actions
+- **Empty States**: Helpful guidance when no data available
+- **Filter Suggestions**: Smart recommendations for users
 
-### `npm run build` fails to minify
+## 🔄 Development Workflow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Code Quality
+- **Component Architecture**: Modular, reusable components
+- **State Management**: Efficient React hooks usage
+- **Error Boundaries**: Graceful error handling
+- **Performance Monitoring**: Debug information in development
+
+### Build & Deployment
+```bash
+# Frontend production build
+cd frontend
+npm run build
+
+# Backend production setup
+cd backend
+npm run start
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📊 Project Statistics
+
+- **Frontend Components**: 15+ reusable React components
+- **Chart Types**: 5 different visualization options
+- **API Endpoints**: 4+ SurveyMonkey API integrations
+- **Filter Options**: Multiple time and threshold filters
+- **Export Formats**: CSV and high-resolution PNG support
+
+## 🔮 Future Enhancements
+
+- **Real-time Data**: WebSocket integration for live updates
+- **Advanced Analytics**: Statistical analysis and correlations
+- **Custom Dashboards**: User-defined chart layouts
+- **Collaboration Features**: Team sharing and commenting
+- **Mobile App**: React Native mobile application
+- **AI Insights**: Machine learning-powered analytics
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- SurveyMonkey API for data integration
+- Material-UI team for excellent React components
+- Recharts for beautiful data visualizations
+- React team for the amazing framework
+
+## 📞 Contact
+
+**Developer**: Varsh  
+**GitHub**: [@var-13](https://github.com/var-13)  
+**Project Link**: [https://github.com/var-13/survey-management-system](https://github.com/var-13/survey-management-system)
+
+---
+**Built with ❤️ using React, Node.js, and SurveyMonkey API**
